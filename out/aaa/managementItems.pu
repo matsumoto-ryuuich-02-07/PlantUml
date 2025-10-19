@@ -1,0 +1,36 @@
+@startuml sample_site
+entity "Patient(患者)" as Patient {
+    + patientId
+}
+
+entity "Consent(同意)" as Consent {
+    + consentId
+}
+
+entity "Death(死亡)" as Death {
+  + deathId
+}
+
+entity "Treatment(治療法)" as Treatment {
+  + treatmentId
+}
+
+entity "SecandaryCancer(2次ガン)" as SecandaryCancer {
+  + secandaryCancerId
+}
+
+entity "Pregnancy(妊娠)" as Pregnancy {
+  + pregnancyId
+}
+
+entity "Visit(ビジット)" as Visit {
+  + visitId
+}
+
+
+Patient ||--|| Consent
+Patient ||--|| Death
+Patient ||--|{ Treatment
+Patient ||--|{SecandaryCancer
+Patient ||--|{Pregnancy
+Treatment ||--|{Visit
